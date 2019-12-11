@@ -1,0 +1,7 @@
+*.exe
+*.exe~
+/cmd/parse-template
+coverage.txt
+.idea/
+artifacts/
+*.syso
