@@ -23,6 +23,7 @@ install:
 
 script:
   - bash travis-build.sh
+  - export BODY=$(cat DESCRIPTION)
 
 deploy:
   - provider: releases

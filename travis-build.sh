@@ -103,3 +103,19 @@ for os in $OSES; do
     cd -
   done
 done
+
+# Calculate SHA-256 checksums
+cd "$ARTIFACTS"
+sha256sum ./* >> SHA256SUMS
+
+big_label "Build results"
+cat SHA256SUMS
+
+cd -
+
+# Build a description for the release
+git log -1 --pretty=%B > DESCRIPTION
+echo >> DESCRIPTION
+echo '```' >> DESCRIPTION
+cat "$ARTIFACTS/SHA256SUMS" >> DESCRIPTION
+echo '```' >> DESCRIPTION
