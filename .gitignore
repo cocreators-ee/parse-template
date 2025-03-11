@@ -5,3 +5,5 @@ coverage.txt
 .idea/
 artifacts/
 *.syso
+# Added by goreleaser init:
+dist/
