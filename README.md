@@ -8,7 +8,7 @@ Render simple templates using [Golang's text/template](https://golang.org/pkg/te
 Simply put you run the tool giving it the name of a file to use as a template, and potential values to inject into the template, and you get the output to stdout.
 
 ```bash
-./parse-template nginx.conf.tpl --domain=example.com > nginx.conf 
+./parse-template nginx.conf.tpl --domain=example.com > nginx.conf
 ```
 
 
