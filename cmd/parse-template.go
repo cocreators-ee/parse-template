@@ -11,7 +11,7 @@ func usage() {
 	fmt.Println("Usage:")
 	fmt.Printf("  %s <source file> [--name=value]\n", os.Args[0])
 	fmt.Println("")
-	fmt.Printf("More information at github.com/cocreators-ee/parse-template\n")
+	fmt.Printf("More information at https://github.com/cocreators-ee/parse-template\n")
 }
 
 func main() {
