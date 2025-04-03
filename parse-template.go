@@ -49,13 +49,11 @@ func GetTemplateData(args []string, env []string) (string, *TemplateData) {
 func CompileTemplate(templateContent string, data *TemplateData, output io.Writer) {
 	// TODO: Should we add .Option("missingkey=error") ? How to deal with `if .Any.local`?
 	tmpl, err := template.New("template").Parse(templateContent)
-
 	if err != nil {
 		panic(err)
 	}
 
 	err = tmpl.Execute(output, data)
-
 	if err != nil {
 		panic(err)
 	}
