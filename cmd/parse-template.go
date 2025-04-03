@@ -2,16 +2,16 @@ package main
 
 import (
 	"fmt"
-	"github.com/lieturd/parse-template"
-	"io/ioutil"
 	"os"
+
+	parse_template "github.com/cocreators-ee/parse-template"
 )
 
 func usage() {
 	fmt.Println("Usage:")
 	fmt.Printf("  %s <source file> [--name=value]\n", os.Args[0])
 	fmt.Println("")
-	fmt.Printf("More information at https://github.com/Lieturd/parse-template\n")
+	fmt.Printf("More information at https://github.com/cocreators-ee/parse-template\n")
 }
 
 func main() {
@@ -21,7 +21,7 @@ func main() {
 	}
 
 	source, td := parse_template.GetTemplateData(os.Args, os.Environ())
-	contents, err := ioutil.ReadFile(source)
+	contents, err := os.ReadFile(source)
 	if err != nil {
 		panic(err)
 	}

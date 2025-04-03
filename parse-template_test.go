@@ -2,10 +2,11 @@ package parse_template
 
 import (
 	"bytes"
-	. "github.com/stretchr/testify/assert"
-	"io/ioutil"
+	"io"
 	"log"
 	"testing"
+
+	. "github.com/stretchr/testify/assert"
 )
 
 func TestGetTemplateData(t *testing.T) {
@@ -57,7 +58,7 @@ func TestCompileTemplate(t *testing.T) {
 
 	res := new(bytes.Buffer)
 	CompileTemplate(TEMPLATE, td, res)
-	contentBytes, err := ioutil.ReadAll(res)
+	contentBytes, err := io.ReadAll(res)
 	if err != nil {
 		panic(err)
 	}
@@ -79,7 +80,7 @@ func TestTemplateCondition(t *testing.T) {
 
 	res := new(bytes.Buffer)
 	CompileTemplate(TEMPLATE, td, res)
-	contentBytes, err := ioutil.ReadAll(res)
+	contentBytes, err := io.ReadAll(res)
 	if err != nil {
 		panic(err)
 	}
