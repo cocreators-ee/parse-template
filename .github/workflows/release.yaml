@@ -21,9 +21,9 @@ jobs:
           go-version: "1.24"
 
       - name: GoReleaser
-        uses: goreleaser/goreleaser-action@v6
+        uses: goreleaser/goreleaser-action@9c156ee8a17a598857849441385a2041ef570552 # v6
         with:
-          version: latest
+          version: 2.8.2
           args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
